@@ -1,0 +1,6 @@
+[submodule "pack/william/start/vim-sensible"]
+	path = pack/william/start/vim-sensible
+	url = https://github.com/tpope/vim-sensible
+[submodule "pack/william/start/vim-airline"]
+	path = pack/william/start/vim-airline
+	url = https://github.com/vim-airline/vim-airline
