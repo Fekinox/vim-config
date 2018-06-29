@@ -1,6 +1,0 @@
-[submodule "vim-airline"]
-	path = vim-airline
-	url = ./pack/william/start/vim-airline
-[submodule "vim-sensible"]
-	path = vim-sensible
-	url = ./pack/william/start/vim-sensible
