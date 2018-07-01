@@ -22,7 +22,6 @@ set listchars+=precedes:<	" Left edge
 syntax enable
 colorscheme monokai
 
-
 "
 "	MAPPINGS
 
