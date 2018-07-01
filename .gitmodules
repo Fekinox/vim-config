@@ -1,3 +1,6 @@
 [submodule "pack/william/start/vim-sensible"]
 	path = pack/william/start/vim-sensible
 	url = https://github.com/tpope/vim-sensible
+[submodule "pack/william/start/lightline.vim"]
+	path = pack/william/start/lightline.vim
+	url = https://github.com/itchyny/lightline.vim
