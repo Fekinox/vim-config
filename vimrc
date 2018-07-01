@@ -16,8 +16,12 @@ set listchars=eol:$			" End of line
 set listchars+=tab:>-		" Tabs
 set listchars+=space:_		" Spaces
 set listchars+=trail:~		" Trailing spaces
-set listchars+=extends:>
-set listchars+=precedes:<
+set listchars+=extends:>	" Right edge
+set listchars+=precedes:<	" Left edge
+
+syntax enable
+colorscheme monokai
+
 
 "
 "	MAPPINGS
@@ -46,11 +50,11 @@ nnoremap <leader><Space> zM
 nnoremap <Space> za
 
 "	Wrap selection
-vnoremap <leader>"	xa"<escp`>a"<esc>
-vnoremap <leader>' xa'<esc>p`>a'<esc>
-vnoremap <leader>( xa(<esc>p`>a)<esc>
-vnoremap <leader>[ xa[<esc>p`>a]<esc>
-vnoremap <leader>{ xa{<esc>p`>a}<esc>
+vnoremap <leader>" xa"<esc>pa"<esc>
+vnoremap <leader>' xa'<esc>pa'<esc>
+vnoremap <leader>( xa(<esc>pa)<esc>
+vnoremap <leader>[ xa[<esc>pa]<esc>
+vnoremap <leader>{ xa{<esc>pa}<esc>
 
 onoremap p i(
 
@@ -73,8 +77,8 @@ onoremap al( :<c-u>normal! F)va(<cr>
 "	Persistent folds
 augroup AutoSaveFolds
 	autocmd!
-	autocmd BufWinLeave * silent mkview
-	autocmd BufWinEnter * silent loadview
+	autocmd BufWinLeave * silent! mkview
+	autocmd BufWinEnter * silent! loadview
 augroup END
 
 "	Haskell settings
