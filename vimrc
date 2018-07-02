@@ -22,27 +22,45 @@ set listchars+=precedes:<	" Left edge
 syntax enable
 colorscheme monokai
 
+" lightline
+
+"let g:lightline = {
+"	\ 'colorscheme': 'one',
+"	\ 'active': {
+"	\	'left': [	[ 'mode', 'paste' ],
+"					
+"	\ }
+
+" UltiSnips
+let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsSnippetDirectories="/home/feki/.vim/UltiSnips"
 "
-"	MAPPINGS
+"	MAPPINGS 
 
 let mapleader="-"
+let maplocalleader="_"
 
 "	Edit vimrc
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>ev :silent vsplit $MYVIMRC<cr>
 "	Reload vimrc
-nnoremap <leader>sv :w<cr>:source $MYVIMRC<cr>
+nnoremap <leader>sv :silent w<cr>:silent source $MYVIMRC<cr>
 "	Toggle line numbers
-nnoremap <leader>nu :set number!<cr>
+nnoremap <leader>nu :silent set number!<cr>
 "	Toggle whitespace visibility
-nnoremap <leader>ws :set list!<cr>
+nnoremap <leader>ws :silent set list!<cr>
 "	Toggle search highlighting
-nnoremap <leader>hl :set hlsearch!<cr>
+nnoremap <leader>hl :silent set hlsearch!<cr>
 "	Clear current search
-nnoremap <leader>cs :let @/ = ""<cr>"
+nnoremap <leader>cs :silent let @/ = ""<cr>"
 
 "	Exit insert/visual mode
 inoremap qe <esc>
 vnoremap qe <esc>
+inoremap <esc> <nop>
+vnoremap <esc> <nop>
 "	Close all folds
 nnoremap <leader><Space> zM
 "	Open/close fold
@@ -56,7 +74,6 @@ vnoremap <leader>[ xa[<esc>pa]<esc>
 vnoremap <leader>{ xa{<esc>pa}<esc>
 
 onoremap p i(
-
 onoremap in( :<c-u>normal! f(vi(<cr>
 onoremap il( :<c-u>normal! F)vi(<cr>
 
