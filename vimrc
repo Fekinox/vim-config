@@ -11,6 +11,7 @@ set numberwidth=6
 set tabstop=4
 set shiftwidth=4
 set smarttab
+set noshowmode
 
 set listchars=eol:$			" End of line
 set listchars+=tab:>-		" Tabs
@@ -24,12 +25,22 @@ colorscheme monokai
 
 " lightline
 
-"let g:lightline = {
-"	\ 'colorscheme': 'one',
-"	\ 'active': {
-"	\	'left': [	[ 'mode', 'paste' ],
-"					
-"	\ }
+let g:lightline = {
+	\ 'colorscheme': 'wombat',
+	\ 'active': {
+	\	'left': [	[ 'mode', 'paste' ],
+	\				[ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
+	\	'right':[	[ 'lineinfo' ],
+	\				[ 'percent' ],
+	\				[ 'fileformat', 'fileencoding', 'filetype', 'charvaluehex' ]	]
+	\ },
+	\ 'component_function': {
+	\	'gitbranch': 'fugitive#head'
+	\ },
+	\ 'component': {
+	\	'charvaluehex': '0x%B'
+	\ },
+	\ }
 
 " UltiSnips
 let g:UltiSnipsEditSplit="vertical"
@@ -37,6 +48,7 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsSnippetDirectories="/home/feki/.vim/UltiSnips"
+let g:UltiSnipsSnippetsDir="/home/feki/.vim/UltiSnips"
 "
 "	MAPPINGS 
 
@@ -55,12 +67,12 @@ nnoremap <leader>ws :silent set list!<cr>
 nnoremap <leader>hl :silent set hlsearch!<cr>
 "	Clear current search
 nnoremap <leader>cs :silent let @/ = ""<cr>"
+"	Set filetype
+nnoremap <leader>sf :silent set ft=
 
 "	Exit insert/visual mode
 inoremap qe <esc>
 vnoremap qe <esc>
-inoremap <esc> <nop>
-vnoremap <esc> <nop>
 "	Close all folds
 nnoremap <leader><Space> zM
 "	Open/close fold
@@ -80,7 +92,17 @@ onoremap il( :<c-u>normal! F)vi(<cr>
 onoremap an( :<c-u>normal! f(va(<cr>
 onoremap al( :<c-u>normal! F)va(<cr>
 
-" something in (parentheses) is written.
+"	When user types two of these symbols, place cursor inside them
+inoremap '' ''<esc>i
+inoremap "" ""<esc>i
+inoremap (( ()<esc>i
+inoremap )) ()<esc>i
+inoremap {{ {}<esc>i
+inoremap }} {}<esc>i
+inoremap << <><esc>i
+inoremap >> <><esc>i
+inoremap [[ []<esc>i
+inoremap ]] []<esc>i
 
 "
 "	ABBREVIATIONS
