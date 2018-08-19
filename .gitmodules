@@ -7,3 +7,18 @@
 [submodule "pack/william/start/vim-fugitive"]
 	path = pack/william/start/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
+[submodule "pack/william/start/ultisnips"]
+	path = pack/william/start/ultisnips
+	url = https://github.com/SirVer/ultisnips
+[submodule "pack/william/start/vim-snippets"]
+	path = pack/william/start/vim-snippets
+	url = https://github.com/honza/vim-snippets
+[submodule "pack/william/start/neosnippet.vim"]
+	path = pack/william/start/neosnippet.vim
+	url = https://github.com/Shougo/neosnippet.vim
+[submodule "pack/william/start/deoplete.nvim"]
+	path = pack/william/start/deoplete.nvim
+	url = https://github.com/Shougo/deoplete.nvim
+[submodule "neosnippet-snippets"]
+	path = neosnippet-snippets
+	url = https://github.com/Shougo/neosnippet-snippets

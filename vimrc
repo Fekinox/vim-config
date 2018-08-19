@@ -5,7 +5,7 @@
 "	SETTINGS
 
 set showcmd
-set number
+set relativenumber
 set ruler
 set numberwidth=6
 set tabstop=4
@@ -21,7 +21,7 @@ set listchars+=extends:>	" Right edge
 set listchars+=precedes:<	" Left edge
 
 syntax enable
-colorscheme monokai
+colo monokai
 
 " lightline
 
@@ -47,8 +47,8 @@ let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-let g:UltiSnipsSnippetDirectories="/home/feki/.vim/UltiSnips"
-let g:UltiSnipsSnippetsDir="/home/feki/.vim/UltiSnips"
+let g:UltiSnipsSnippetDirectories=["./.vim/UltiSnips"]
+let g:UltiSnipsSnippetsDir="./.vim/UltiSnips"
 "
 "	MAPPINGS 
 
@@ -56,9 +56,9 @@ let mapleader="-"
 let maplocalleader="_"
 
 "	Edit vimrc
-nnoremap <leader>ev :silent vsplit $MYVIMRC<cr>
+nnoremap <leader>ev :silent vsplit ~/.vim/vimrc<cr>
 "	Reload vimrc
-nnoremap <leader>sv :silent w<cr>:silent source $MYVIMRC<cr>
+nnoremap <leader>sv :silent source ~/.vim/vimrc<cr>
 "	Toggle line numbers
 nnoremap <leader>nu :silent set number!<cr>
 "	Toggle whitespace visibility
@@ -69,6 +69,8 @@ nnoremap <leader>hl :silent set hlsearch!<cr>
 nnoremap <leader>cs :silent let @/ = ""<cr>"
 "	Set filetype
 nnoremap <leader>sf :silent set ft=
+"	Select all
+nnoremap <c-a>		<esc>ggVG
 
 "	Exit insert/visual mode
 inoremap qe <esc>
@@ -77,6 +79,9 @@ vnoremap qe <esc>
 nnoremap <leader><Space> zM
 "	Open/close fold
 nnoremap <Space> za
+
+"	Save as root
+nnoremap ZK :w !sudo tee %<cr>
 
 "	Wrap selection
 vnoremap <leader>" xa"<esc>pa"<esc>
@@ -91,18 +96,6 @@ onoremap il( :<c-u>normal! F)vi(<cr>
 
 onoremap an( :<c-u>normal! f(va(<cr>
 onoremap al( :<c-u>normal! F)va(<cr>
-
-"	When user types two of these symbols, place cursor inside them
-inoremap '' ''<esc>i
-inoremap "" ""<esc>i
-inoremap (( ()<esc>i
-inoremap )) ()<esc>i
-inoremap {{ {}<esc>i
-inoremap }} {}<esc>i
-inoremap << <><esc>i
-inoremap >> <><esc>i
-inoremap [[ []<esc>i
-inoremap ]] []<esc>i
 
 "
 "	ABBREVIATIONS
